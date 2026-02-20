@@ -84,30 +84,30 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "name": "imageAlt",
         "label": "Image Alt",
         "multi": false
       },
       {
         "component": "richtext",
-        "name": "div:nth-child(2)",
+        "name": "text",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "div:nth-child(3)",
-        "valueType": "string",
-        "label": "Variant",
-        "multi": false
+        "name": "position",
+        "value": "",
+        "label": "Image Position",
+        "valueType": "string"
       }
     ]
   },
