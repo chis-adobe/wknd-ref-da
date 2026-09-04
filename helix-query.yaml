@@ -1,0 +1,53 @@
+version: 1
+
+indices:
+  adventures:
+    include:
+      - /fragments/adventures/**
+      - /content/fragments/adventures/**
+    target: /fragments/adventures/query-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      activity:
+        select: head > meta[name="activity"]
+        value: |
+          attribute(el, 'content')
+      adventureType:
+        select: head > meta[name="adventure-type"]
+        value: |
+          attribute(el, 'content')
+      tripLength:
+        select: head > meta[name="trip-length"]
+        value: |
+          attribute(el, 'content')
+      groupSize:
+        select: head > meta[name="group-size"]
+        value: |
+          attribute(el, 'content')
+      difficulty:
+        select: head > meta[name="difficulty"]
+        value: |
+          attribute(el, 'content')
+      price:
+        select: head > meta[name="price"]
+        value: |
+          attribute(el, 'content')
+      overview:
+        select: head > meta[name="overview"]
+        value: |
+          attribute(el, 'content')
+      itinerary:
+        select: head > meta[name="itinerary"]
+        value: |
+          attribute(el, 'content')
+      whatToBring:
+        select: head > meta[name="what-to-bring"]
+        value: |
+          attribute(el, 'content')

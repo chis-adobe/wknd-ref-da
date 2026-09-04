@@ -79,6 +79,81 @@
     ]
   },
   {
+    "id": "adventure",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "activity",
+        "label": "Activity",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "adventureType",
+        "label": "Adventure Type",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tripLength",
+        "label": "Trip Length",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "groupSize",
+        "label": "Group Size",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "difficulty",
+        "label": "Difficulty",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "price",
+        "label": "Price",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "overview",
+        "label": "Overview",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "itinerary",
+        "label": "Itinerary",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "whatToBring",
+        "label": "What to Bring",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "fragment",
+        "label": "Fragment (optional)",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

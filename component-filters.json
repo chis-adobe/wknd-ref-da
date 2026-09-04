@@ -9,6 +9,7 @@
     "id": "section",
     "components": [
       "accordion",
+      "adventure",
       "cards",
       "carousel",
       "columns",
