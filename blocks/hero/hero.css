@@ -200,23 +200,3 @@
   }
 
 }
-
-/* Adventure page heroes use a light logo image, so give the text a light-grey
-   backing with dark text to keep the title and description readable. */
-body:has(.adventure) .hero div:has(> h1) {
-  background-color: rgb(235 235 235 / 92%);
-  padding: 24px 32px;
-  border-radius: var(--border-radius-medium);
-  max-width: 900px;
-}
-
-body:has(.adventure) .hero h1,
-body:has(.adventure) .hero p {
-  color: var(--text-color);
-  text-shadow: none;
-}
-
-body:has(.adventure) .hero h1::after {
-  margin-bottom: 0;
-}
-
