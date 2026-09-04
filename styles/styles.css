@@ -9,6 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+
 /*
  :root {
   --brand-theme-color: #ff0000;
@@ -23,17 +24,17 @@
 
 :root {
   /* colors */
-  --background-color: var(--brand-background-color, #ffffff);
+  --background-color: var(--brand-background-color, #fff);
   --dark-color: var(--brand-dark-color, #131313);
   --light-color: var(--brand-light-color, #dcdcdc);
   --text-color: var(--brand-text-color, #131313);
-  --text-light: var(--brand-light-text-color, #ffffff);
-  --text-disabled:rgb(113, 113, 113);
+  --text-light: var(--brand-light-text-color, #fff);
+  --text-disabled:rgb(113 113 113);
   --link-color: var(--brand-link-color, #131313);
   --link-hover-color: var(--brand-link-hover-color, #ffc719);
   --main-accent-color: var(--brand-theme-color, #ffc719);
-  --dark-color-opacity: rgba(0, 0, 0, 0.55);
-  --light-color-opacity: rgba(255, 255, 255, 0.5);
+  --dark-color-opacity: rgb(0 0 0 / 55%);
+  --light-color-opacity: rgb(255 255 255 / 50%);
 
   /* fonts */
   --body-font-family: 'Adobe Clean', roboto, roboto-fallback, sans-serif;
@@ -300,26 +301,35 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
+
+  /* parallax effect */
+  height: 100vh;
+  overflow: hidden auto;
+  perspective: 1px;
 }
 
 body.appear {
   display: block;
 }
+
 body.gray-theme {
   filter: grayscale(100%);
 }
+
 body.red-theme {
-  --link-hover-color: #ff0000;
-  --main-accent-color: #ff0000;
+  --link-hover-color: #f00;
+  --main-accent-color: #f00;
 }
+
 body.blue-theme {
-  --link-hover-color: #0000ff;
-  --main-accent-color: #0000ff;
+  --link-hover-color: #00f;
+  --main-accent-color: #00f;
 }
+
 body.green-theme {
-  --link-hover-color: #00ff00;
-  --main-accent-color: #00ff00;
+  --link-hover-color: #0f0;
+  --main-accent-color: #0f0;
 }
 
 header {
@@ -415,6 +425,7 @@ button {
 }
 
 /* links */
+
 /* buttons */
 a, a:any-link, a.button:any-link,
 button {
@@ -422,7 +433,6 @@ button {
   padding: 0;
   background-color: transparent;
   color: var(--link-color);
-  text-decoration: none;
   outline: none;
   border: none;
   border-radius: 0;
@@ -437,8 +447,9 @@ button {
   white-space: nowrap;
   text-decoration: none;
 }
+
 a::after, a.button::after {
-  font-family: 'Font Awesome 5 Solid';
+  font-family: 'Font Awesome 5 Solid', sans-serif;
   content: "\f105";
   color: var(--link-color);
   font-size: 16px;
@@ -453,6 +464,7 @@ a::after, a.button::after {
   padding: 1px 10px;
   cursor: pointer;
 }
+
 a:hover,
 a:focus,
 a.button:hover,
@@ -461,6 +473,7 @@ a.button:focus {
   text-decoration: underline;
   cursor: pointer;
 }
+
 a:hover::after,
 a:focus::after,
 a.button:hover::after,
@@ -473,6 +486,7 @@ button:disabled:hover {
   color: var(--text-disabled);
   cursor: unset;
 }
+
 button:disabled::after,
 button:disabled:hover::after {
   color: var(--text-disabled);
@@ -484,6 +498,12 @@ button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 main img {
@@ -511,6 +531,7 @@ main picture {
 	position: relative;
   overflow: hidden;
 }
+
 main picture::before {
 	position: absolute;
 	top: 0;
@@ -520,25 +541,20 @@ main picture::before {
 	content: '';
 	width: 50%;
 	height: 100%;
-	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-	-webkit-transform: skewX(-25deg);
+	background: linear-gradient(to right, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 30%) 100%);
 	transform: skewX(-25deg);
 }
+
 main picture:hover::before {
-	-webkit-animation: shine .75s;
 	animation: shine .75s;
 }
-@-webkit-keyframes shine {
-	100% {
-		left: 125%;
-	}
-}
+
 @keyframes shine {
 	100% {
 		left: 125%;
 	}
 }
+
 /* Image Hover Effect Shine - end */
 
 
@@ -551,47 +567,43 @@ html {
   overflow-x: hidden;
 }
 
-body {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-perspective: 1px;
-  perspective: 1px;
-}
-
 main {
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
 main .hero-container {
-  -webkit-transform: translateZ(-1px) scale(2);
   transform: translateZ(-1px) scale(2);
   padding: 0;
   margin: -180px 0 180px !important;
 }
+
 main .cards-container {
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+
 .adobe-ue-edit header, .adobe-ue-preview header {
   position: initial;
 }
+
 .adobe-ue-edit body, .adobe-ue-preview body {
   height: initial;
   perspective: initial;
   overflow: initial;
 }
+
 .adobe-ue-edit main, .adobe-ue-preview main {
   min-height: 100px;
 }
+
 .adobe-ue-edit main .hero-container, .adobe-ue-preview main .hero-container {
   margin: initial !important;
   transform: initial;
 }
+
 .adobe-ue-edit main .cards-container, .adobe-ue-preview main .cards-container {
   transform: initial;
 }
+
 /* Parallax effect - End */
 
 /* Disable parallax on adventure pages, where the hero sits directly above the
@@ -757,6 +769,7 @@ main .section[data-sec-full-width="true"] {
   width: 100%;
   max-width: 100%;
 }
+
 main > .section[data-sec-full-width="true"] > div {
   max-width: 100%;
   margin: 0;
@@ -768,14 +781,17 @@ main > .section[data-sec-full-width="true"] > div {
 main .section.bg-default {
   background-color: var(--background-color);
 }
+
 main .section.bg-theme {  
   background-color: var(--main-accent-color);
   color: var(--text-color);
 }
+
 main .section.bg-dark {
   background-color: var(--dark-color);
   color: var(--text-light); 
 }
+
 main .section.bg-light {
   background-color: var(--light-color);
   color: var(--text-color);
@@ -785,13 +801,12 @@ main .section.bg-light {
 
 
 /* Responsive styles- start */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   :root {
     /* Adjust font sizes for mobile */
     --body-font-size-m: 18px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 14px;
-    
     --heading-font-size-xxl: 40px;
     --heading-font-size-xl: 34px; 
     --heading-font-size-l: 28px;
@@ -814,13 +829,12 @@ main .section.bg-light {
 
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   :root {
     /* Further reduce sizes for small mobile */
     --body-font-size-m: 16px;
     --body-font-size-s: 14px;
     --body-font-size-xs: 12px;
-    
     --heading-font-size-xxl: 32px;
     --heading-font-size-xl: 28px;
     --heading-font-size-l: 24px;
@@ -839,12 +853,6 @@ main .section.bg-light {
 
 }
 
-/* Ensure images are responsive */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* Make tables responsive */
 table {
   width: 100%;
@@ -853,7 +861,7 @@ table {
 }
 
 /* Ensure proper box sizing */
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
