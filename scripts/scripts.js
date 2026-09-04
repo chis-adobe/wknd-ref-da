@@ -16,11 +16,27 @@ import {
 } from './aem.js';
 import { picture, source, img } from './dom-helpers.js';
 
+// eslint-disable-next-line import/no-cycle
 import {
   getLanguage,
   formatDate,
   PATH_PREFIX,
 } from './utils.js';
+
+import {
+  runExperimentation,
+  runExperimentationLazy,
+} from './experiment-loader.js';
+
+const experimentationConfig = {
+  // Set prodHost so mock data is shown on preview but real experiments run in prod.
+  prodHost: 'main--wknd-ref-da--chis-adobe.aem.live',
+  audiences: {
+    mobile: () => window.innerWidth < 600,
+    desktop: () => window.innerWidth >= 600,
+    // define additional custom audiences here as needed
+  },
+};
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -285,6 +301,8 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   renderWBDataLayer();
+  // run experiments/campaigns/audiences before decoration so swapped content is decorated
+  await runExperimentation(doc, experimentationConfig);
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -316,6 +334,8 @@ async function loadLazy(doc) {
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
+
+  await runExperimentationLazy(doc, experimentationConfig);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
