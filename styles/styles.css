@@ -627,6 +627,13 @@ body:has(.adventure) main .hero-container {
   margin: 0 !important;
 }
 
+/* Remove the hero's top margin so it sits flush under the fixed header
+   (no white gap) on adventure pages. */
+body.adventure main .hero,
+body:has(.adventure) main .hero {
+  margin-top: 0;
+}
+
 
 
 /* sections */
