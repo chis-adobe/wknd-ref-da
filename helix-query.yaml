@@ -16,39 +16,43 @@ indices:
         select: head > meta[name="description"]
         value: |
           attribute(el, 'content')
-      activity:
-        select: main .adventure > div:nth-child(1) > div:nth-child(2)
+      image:
+        select: main .adventure > div:nth-child(1) > div:nth-child(2) img
         value: |
-          textContent(el)
-      adventureType:
+          attribute(el, 'src')
+      activity:
         select: main .adventure > div:nth-child(2) > div:nth-child(2)
         value: |
           textContent(el)
-      tripLength:
+      adventureType:
         select: main .adventure > div:nth-child(3) > div:nth-child(2)
         value: |
           textContent(el)
-      groupSize:
+      tripLength:
         select: main .adventure > div:nth-child(4) > div:nth-child(2)
         value: |
           textContent(el)
-      difficulty:
+      groupSize:
         select: main .adventure > div:nth-child(5) > div:nth-child(2)
         value: |
           textContent(el)
-      price:
+      difficulty:
         select: main .adventure > div:nth-child(6) > div:nth-child(2)
         value: |
           textContent(el)
-      overview:
+      price:
         select: main .adventure > div:nth-child(7) > div:nth-child(2)
         value: |
           textContent(el)
-      itinerary:
+      overview:
         select: main .adventure > div:nth-child(8) > div:nth-child(2)
         value: |
           textContent(el)
-      whatToBring:
+      itinerary:
         select: main .adventure > div:nth-child(9) > div:nth-child(2)
+        value: |
+          textContent(el)
+      whatToBring:
+        select: main .adventure > div:nth-child(10) > div:nth-child(2)
         value: |
           textContent(el)
