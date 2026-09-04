@@ -25,16 +25,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h1::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero h2 {
   width: 100%;
   max-width: 1200px;
@@ -47,16 +48,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h2::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero h3 {
   width: 100%;
   max-width: 1200px;
@@ -69,16 +71,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h3::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero h4 {
   width: 100%;
   max-width: 1200px;
@@ -91,16 +94,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h4::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero h5 {
   width: 100%;
   max-width: 1200px;
@@ -113,16 +117,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h5::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero h6 {
   width: 100%;
   max-width: 1200px;
@@ -135,16 +140,17 @@
   position:relative;
   z-index: 1;
 }
+
 .hero h6::after {
   background-color: var(--main-accent-color);
   content: "";
   display: block;
   height: 5px;
-  margin: auto;
   transition: width .4s ease-in-out;
   width: 128px;
   margin: 20px auto 30px;
 }
+
 .hero p {
   width: 100%;
   max-width: 1200px;
@@ -182,7 +188,6 @@
 
 /* Responsive Styles */
 @media (width < 1024px) {
-
   .hero {
     min-height: 650px;
   }
@@ -190,10 +195,28 @@
 }
 
 @media (width < 768px) {
-
   .hero {
     min-height: 600px;
   }
-  
+
+}
+
+/* Adventure page heroes use a light logo image, so give the text a light-grey
+   backing with dark text to keep the title and description readable. */
+body:has(.adventure) .hero div:has(> h1) {
+  background-color: rgb(235 235 235 / 92%);
+  padding: 24px 32px;
+  border-radius: var(--border-radius-medium);
+  max-width: 900px;
+}
+
+body:has(.adventure) .hero h1,
+body:has(.adventure) .hero p {
+  color: var(--text-color);
+  text-shadow: none;
+}
+
+body:has(.adventure) .hero h1::after {
+  margin-bottom: 0;
 }
 
