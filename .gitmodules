@@ -1,3 +1,0 @@
-[submodule "plugins/experimentation"]
-	path = plugins/experimentation
-	url = https://github.com/adobe/aem-experimentation.git
