@@ -594,6 +594,27 @@ main .cards-container {
 }
 /* Parallax effect - End */
 
+/* Disable parallax on adventure pages, where the hero sits directly above the
+   adventure block and the effect causes the content to overlap the image on
+   scroll. Keyed off the presence of the adventure block so it never affects
+   the parallax homepage. */
+body.adventure,
+body:has(.adventure) {
+  height: initial;
+  perspective: initial;
+}
+
+body.adventure main,
+body:has(.adventure) main {
+  transform-style: initial;
+}
+
+body.adventure main .hero-container,
+body:has(.adventure) main .hero-container {
+  transform: initial;
+  margin: 0 !important;
+}
+
 
 
 /* sections */
