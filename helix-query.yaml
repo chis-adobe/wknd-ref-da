@@ -1,0 +1,54 @@
+version: 1
+
+indices:
+  adventures:
+    include:
+      - /fragments/adventures/**
+    exclude:
+      - /fragments/adventures/query-index.json
+    target: /fragments/adventures/query-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      activity:
+        select: main .adventure > div:nth-child(1) > div:nth-child(2)
+        value: |
+          textContent(el)
+      adventureType:
+        select: main .adventure > div:nth-child(2) > div:nth-child(2)
+        value: |
+          textContent(el)
+      tripLength:
+        select: main .adventure > div:nth-child(3) > div:nth-child(2)
+        value: |
+          textContent(el)
+      groupSize:
+        select: main .adventure > div:nth-child(4) > div:nth-child(2)
+        value: |
+          textContent(el)
+      difficulty:
+        select: main .adventure > div:nth-child(5) > div:nth-child(2)
+        value: |
+          textContent(el)
+      price:
+        select: main .adventure > div:nth-child(6) > div:nth-child(2)
+        value: |
+          textContent(el)
+      overview:
+        select: main .adventure > div:nth-child(7) > div:nth-child(2)
+        value: |
+          textContent(el)
+      itinerary:
+        select: main .adventure > div:nth-child(8) > div:nth-child(2)
+        value: |
+          textContent(el)
+      whatToBring:
+        select: main .adventure > div:nth-child(9) > div:nth-child(2)
+        value: |
+          textContent(el)

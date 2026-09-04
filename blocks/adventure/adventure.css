@@ -1,0 +1,111 @@
+.adventure .adventure-title {
+  margin: 0 0 1.5rem;
+}
+
+.adventure .adventure-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (width >= 900px) {
+  .adventure .adventure-layout {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  .adventure .adventure-main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .adventure .adventure-attributes {
+    flex: 0 0 280px;
+  }
+}
+
+/* side attributes */
+.adventure .adventure-attributes {
+  padding: 1.5rem;
+  border: 1px solid var(--light-color);
+  border-radius: var(--border-radius-medium);
+  background-color: color-mix(in srgb, var(--light-color) 25%, transparent);
+}
+
+.adventure .adventure-attributes dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.adventure .adventure-attributes dt {
+  margin: 0;
+  padding-top: 0.75rem;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-disabled);
+}
+
+.adventure .adventure-attributes dd {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--light-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+}
+
+.adventure .adventure-attributes dd:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* tabs */
+.adventure .adventure-tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5ch;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--light-color);
+}
+
+.adventure .adventure-tabs-tab {
+  margin: 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.adventure .adventure-tabs-tab:hover {
+  color: var(--link-hover-color);
+}
+
+.adventure .adventure-tabs-tab[aria-selected='true'] {
+  color: var(--main-accent-color);
+  border-bottom-color: var(--main-accent-color);
+}
+
+.adventure .adventure-tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.adventure .adventure-tabs-panel > :first-child {
+  margin-top: 0;
+}
+
+.adventure .adventure-tabs-panel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-medium);
+}
