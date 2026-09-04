@@ -4,7 +4,8 @@ indices:
   adventures:
     include:
       - /fragments/adventures/**
-      - /content/fragments/adventures/**
+    exclude:
+      - /fragments/adventures/query-index.json
     target: /fragments/adventures/query-index.json
     properties:
       title:
@@ -16,38 +17,38 @@ indices:
         value: |
           attribute(el, 'content')
       activity:
-        select: head > meta[name="activity"]
+        select: main .adventure > div:nth-child(1) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       adventureType:
-        select: head > meta[name="adventure-type"]
+        select: main .adventure > div:nth-child(2) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       tripLength:
-        select: head > meta[name="trip-length"]
+        select: main .adventure > div:nth-child(3) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       groupSize:
-        select: head > meta[name="group-size"]
+        select: main .adventure > div:nth-child(4) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       difficulty:
-        select: head > meta[name="difficulty"]
+        select: main .adventure > div:nth-child(5) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       price:
-        select: head > meta[name="price"]
+        select: main .adventure > div:nth-child(6) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       overview:
-        select: head > meta[name="overview"]
+        select: main .adventure > div:nth-child(7) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       itinerary:
-        select: head > meta[name="itinerary"]
+        select: main .adventure > div:nth-child(8) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
       whatToBring:
-        select: head > meta[name="what-to-bring"]
+        select: main .adventure > div:nth-child(9) > div:nth-child(2)
         value: |
-          attribute(el, 'content')
+          textContent(el)
